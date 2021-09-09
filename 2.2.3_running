@@ -1,0 +1,28 @@
+dis1=1
+pace1ins=8*60+15
+times1=dis1*pace1ins
+
+dis2=3
+pace2ins=7*60+12
+times2=dis2*pace2ins
+
+dis3=dis1
+times3=times1
+timespent=times1+times2+times3
+#the part above calculates how much time is spent running in seconds
+
+timebegins=6*3600+52*60
+timeendins=timebegins+timespent
+# The part above converts the end time in seconds
+
+timeendsinh=timeendins//3600
+timeendsinm=(timeendins-timeendsinh*3600)//60
+timeendins=timeendins-timeendsinh*3600-timeendsinm*60
+# The part above converts end time from seconds to hours/minutes/seconds form.
+
+if timeendsinh>12:
+    timeendsinh=timeendsinh-12
+    print("When you finished running, it was",timeendsinh,":",timeendsinm,":",timeendins,"PM")
+else:
+    print("When you finished running, it was",timeendsinh,":",timeendsinm,":",timeendins,"AM")
+    
